@@ -1,3 +1,5 @@
+<!-- Clic Master -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,47 @@
 </head>
 <body>
 
+<!-- Création de la banniere -->
 
+<div class="menu">
+    <img src="" alt="icone et nom">
+    <label class="consignes">Cliquez autant de fois que possible, vous aurez 10 secondes.</label>
+    <input type="button" class="leaderboard-btn" value="Meilleurs Scores">
+    <button class="begin" onclick="start">Commencer</button>
+</div>
+
+<!-- Création du jeu -->
+
+<div class="game">
+
+    <!-- Timeout -->
+    <label id="timeout"></label>
+    <script type="text/javascript">
+        var nb = 0;
+        setInterval(function () {
+            nb++;
+            document.getElementById('timeout').innerHTML = nb;
+            if (nb===1000){
+                return nb;
+            }
+        })
+    </script>
+
+    <!-- Click-area -->
+
+
+
+</div>
+
+<!-- Création des meilleurs scores -->
+
+<div class="leaderboard">
+
+    <!-- Leaderboard stoquée dans une base de donnée -->
+
+
+
+</div>
 
 </body>
 </html>
