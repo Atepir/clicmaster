@@ -1,0 +1,33 @@
+.click-area{
+    background: #9e4971;
+    border-radius: 50px;
+    border-color: brown;
+    border-style: solid;
+    border-width: 2px;
+    width:100px;
+    height: 100px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% , -40%);
+    position: absolute;
+}
+@keyframes anim {
+    0% {width: 100px; height: 100px; border-radius: 50px;background: #bb00ff
+    }
+    15% {width: 95px; height: 95px; border-radius: 50px; background: #890ad7
+    }
+    30% {width: 100px; height: 100px; border-radius: 50px; background: #6e08ad
+    }
+    45% {width: 105px; height: 105px; border-radius: 55px; background: #570687
+    }
+    60% {width: 120px; height: 120px; border-radius: 60px; background: #400465
+    }
+    75% {width: 105px; height: 105px; border-radius: 55px; background: #570687}
+    80% {width: 100px; height: 100px; border-radius: 50px; background: #6e08ad}
+    95% {width: 95px; height: 95px; border-radius: 50px; background: #890ad7}
+    100% {width: 100px; height: 100px; border-radius: 50px;background: #bb00ff}
+}
+.clicked-area{
+    -webkit-animation: anim 100ms;
+    animation: anim 100ms;
+}
