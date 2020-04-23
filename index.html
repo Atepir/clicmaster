@@ -32,6 +32,16 @@
 
     <label id="score">0</label>
 
+    <!-- User registering -->
+
+    <div class="registering" id="registering" hidden>
+        <form action="index.php" method="post">
+            <input type="number" id="score_number" name="score" value="0">
+            <input type="text" name="pseudo" minlength="3" maxlength="10">
+            <input type="submit" value="OK">
+        </form>
+    </div>
+
     <!-- Click-area -->
 
     <div onclick="increaseScore()" id="click-area" class="click-area"><br><br><br></div>
@@ -49,7 +59,13 @@
                 document.getElementById('timeout').innerHTML = "Temps écoulé !";
 
                 document.getElementById('click-area').hidden = true;
+
                 saving(score);
+
+                document.getElementById('registering').hidden = false;
+
+                document.getElementById('score_number').value = score - 1;
+
                 return 0;
             }
         }, 1);
@@ -63,17 +79,8 @@
         }
 
         function savingScore(score, name) {
-            var min_high_score = 0;
-            if (score > min_high_score){
-                // The score deserves to be saved to the table
+            registerUser();
 
-                showHighScoreNotif();
-                showHighScoreTable();
-            }else{
-                // Show High Score Table, Restart Button and Sharing One
-
-                showHighScoreTable();
-            }
         }
 
         function saving(score) {
@@ -89,9 +96,17 @@
 
     $bdd = new PDO('mysql:host=localhost;dbname=id13398134_score;charset=utf8', 'id13398134_flore', 'Geraragordicres12.');
 
-    $req_min = "SELECT score FROM score WHERE score=min(SELECT * FROM score)";
+    if (isset($_POST['score']) and isset($_POST['pseudo'])){
+        $score = $_POST['score'];
+        $pseudo = $_POST['pseudo'];
+        $req = "INSERT INTO score(pseudo, score) VALUES (:score, :pseudo)";
+        $req_set = $bdd->prepare($req);
+        $req_set->execute(array(
+            score=>$score,
+            pseudo=>$pseudo,
+        ));
 
-    $bdd->exec($req_min);
+    }
 
     ?>
 
