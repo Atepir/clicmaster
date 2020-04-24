@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
     <title>Clic Master</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -15,7 +16,9 @@
     <img src="" alt="icone et nom">
     <label id="dedicace">Dedicated to my sweetheart Flore Kabré</label>
     <label id="consignes">Cliquez autant de fois que possible, vous aurez 10 secondes.</label>
-    <input type="button" class="leaderboard-btn" value="Meilleurs Scores">
+    <form action="highscores.php" method="post">
+        <input type="submit" class="leaderboard-btn" name="scores-table" value="Meilleurs Scores">
+    </form>
     <input type="button" class="share" value="Partager">
     <button class="begin" onclick="start()">Commencer</button>
 </div>
@@ -36,7 +39,7 @@
 
     <div class="registering" id="registering" hidden>
         <form action="index.php" method="post">
-            <input type="number" id="score_number" name="score" value="0">
+            <input type="number" readonly id="score_number" name="score" value="0">
             <input type="text" name="pseudo" minlength="3" maxlength="10">
             <input type="submit" value="OK">
         </form>
@@ -94,18 +97,18 @@
 
     <?php
 
-    $bdd = new PDO('mysql:host=localhost;dbname=id13398134_score;charset=utf8', 'id13398134_flore', 'Geraragordicres12.');
+    $bdd = new PDO('mysql:host=sql306.byetcluster.com;dbname=b22_25607929_score;charset=utf8', 'b22_25607929', 'drareg1,');
 
     if (isset($_POST['score']) and isset($_POST['pseudo'])){
         $score = $_POST['score'];
         $pseudo = $_POST['pseudo'];
-        $req = "INSERT INTO score(pseudo, score) VALUES (:score, :pseudo)";
+        $req = "INSERT INTO score(pseudo, score) VALUES (:pseudo, :score)";
         $req_set = $bdd->prepare($req);
         $req_set->execute(array(
-            score=>$score,
             pseudo=>$pseudo,
-        ));
-
+            score=>$score,
+    ));
+        $req_set.closeCursor();
     }
 
     ?>
