@@ -12,13 +12,16 @@
 
 <!-- Creating the banner -->
 
-<div class="home">
+<p class="home">
     <img src="" alt="icone et nom">
-    <label id="dedicace">Dedicated to my sweetheart Flore Kabré</label>
-    <label id="consignes">Cliquez autant de fois que possible, vous aurez 10 secondes.</label>
+    <p><label id="dedicace">Dedicated to my sweetheart Flore Kabré</label></p>
+    <p><label id="consignes">Cliquez autant de fois que possible, vous aurez 10 secondes.</label></p>
+    <p>
     <form action="highscores.php" method="post">
         <input type="submit" class="leaderboard-btn" name="scores-table" value="Meilleurs Scores">
+        <input type="submit" class="leaderboard-btn" name="scores-table" value="Meilleurs Scores">
     </form>
+    </p>
     <input type="button" class="share" value="Partager">
     <button class="begin" onclick="start()">Commencer</button>
 </div>
@@ -66,8 +69,6 @@
                 saving(score);
 
                 document.getElementById('registering').hidden = false;
-
-                document.getElementById('score_number').value = score - 1;
 
                 return 0;
             }
