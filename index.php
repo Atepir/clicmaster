@@ -15,8 +15,8 @@
 <script src="https://kit.fontawesome.com/867e431317.js" crossorigin="anonymous"></script>
 
 <!-- Please, do not remove the line below for respect ! Thank you for that -->
-
 <!-- <p><label id="dedicace" class="white">Dedicated to my sweetheart Flore Kabré</label></p> -->
+
 <p><label id="dedicace" class="white">Version première</label></p>
 
 <div class="header">
