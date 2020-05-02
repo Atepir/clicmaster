@@ -1,15 +1,13 @@
 .click-area{
-    background: #9e4971;
-    border-radius: 50px;
-    border-color: brown;
-    border-style: solid;
-    border-width: 2px;
-    width:100px;
-    height: 100px;
-    top: 60%;
+    background: #00FFFF;
+    border-radius: 80px;
+    width:150px;
+    height: 150px;
+    top: 72%;
     left: 50%;
     transform: translate(-50% , -40%);
     position: absolute;
+    z-index: 100;
 }
 @keyframes anim {
     0% {width: 100px; height: 100px; border-radius: 50px;background: #bb00ff
@@ -28,6 +26,125 @@
     100% {width: 100px; height: 100px; border-radius: 50px;background: #bb00ff}
 }
 .clicked-area{
-    -webkit-animation: anim 100ms;
-    animation: anim 100ms;
+    -webkit-animation: anim 200ms;
+}
+
+body{
+    background: #5603a5;
+    margin: 0;
+}
+#dedicace{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50% , -98%);
+    z-index: 102;
+    margin: 0;
+}
+#delimiter{
+    background: #420080;
+    height: 8%;
+    width: 100%;
+    vertical-align: bottom;
+    position: fixed;
+    top:70%;
+}
+#footer{
+    background: #420080;
+    height: 22%;
+    width: 100%;
+    vertical-align: bottom;
+    position: fixed;
+    top:78%;
+}
+#consignes{
+    top:2%;
+    text-align: center;
+}
+#consignes1{
+    text-align: center;
+}
+#consignes2{
+    text-align: center;
+}
+#consignes3{
+    text-align: center;
+}
+.header{
+    align-items: center;
+    place-items: center;
+}
+.indic{
+    margin-bottom: 7%;
+}
+.start-text{
+    top: 71%;
+    left: 50%;
+    transform: translate(-50% , 0);
+    position: absolute;
+    z-index: 101;
+    text-align: center;
+}
+#start{
+    text-align: center;
+}
+#reb{
+    text-align: center;
+}
+#label{
+    text-align: center;
+}
+#false-score{
+    text-align: center;
+}
+.white{
+    color:white;
+}
+.left-container{
+    float: left;
+}
+.top-container{
+    float: top;
+}
+.bottom-container{
+    float: bottom;
+}
+.right-controller{
+    float: right;
+}
+.top-and-left{
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.top-and-left2{
+    top: 5%;
+    left: 0;
+    position: absolute;
+}
+span#best-scores{
+    font-size: 400%; color: white; bottom: 15%; left:2%; position: absolute; z-index: 110;
+}
+span#best-scores:hover{
+    color: black;
+}
+span#share{
+    font-size: 400%; color: white; bottom: 5%; left:2%; position: absolute; z-index: 110;
+}
+span#share:hover{
+    color: black;
+}
+#table{
+    border-radius: 10px; background: #400465; color: white; text-align: left; top: 10%; left: 50%; transform: translate(-50% , -0%); position: absolute; font-size: 400%;
+}
+@media(max-width:568px){
+    span#best-scores{
+        font-size: 250%;
+    }
+    span#share{
+        font-size: 250%;
+    }
+    #table{
+        font-size: 350%;
+    }
 }
