@@ -14,6 +14,8 @@
 
 <script src="https://kit.fontawesome.com/867e431317.js" crossorigin="anonymous"></script>
 
+<!-- Please, do not remove the line below for respect ! Thank you for that -->
+
 <!-- <p><label id="dedicace" class="white">Dedicated to my sweetheart Flore Kabré</label></p> -->
 <p><label id="dedicace" class="white">Version première</label></p>
 
@@ -69,7 +71,7 @@
 
     <?php
 
-    $bdd = new PDO('mysql:host=localhost;dbname=id13407933_scores;charset=utf8', 'id13407933_lecodesource777', 'x#ESEcs=zgx^9qnu');
+    $bdd = new PDO('mysql:host=localhost;dbname={DBNAME};charset=utf8', '{USER_ID}', '{PASSWORD}');
 
     if (isset($_POST['score']) and isset($_POST['pseudo'])){
         $score = $_POST['score'];
@@ -86,7 +88,7 @@
 
     <?php
 
-        $bdd = new PDO('mysql:host=localhost;dbname=id13407933_scores;charset=utf8', 'id13407933_lecodesource777', 'x#ESEcs=zgx^9qnu');
+        $bdd = new PDO('mysql:host=localhost;dbname={DBNAME};charset=utf8', '{USER_ID}', '{PASSWORD}');
 
         if (isset($_GET['g']) and $_GET['g'] == 'scores'){
             $req = "SELECT * FROM score ORDER BY score DESC LIMIT 5";
