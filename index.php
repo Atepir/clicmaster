@@ -37,7 +37,7 @@
         <i class="fas fa-chess-rook" onClick="parent.location='index.php?g=scores'"></i>
     </span>
     <span id="share">
-        <i class="fab fa-facebook-square" onclick="parent.location='https://www.facebook.com/sharer/sharer.php?u=http://clicboom.000webhostapp.com'"></i>
+        <i class="fab fa-facebook-square" onclick="parent.location='https://www.facebook.com/sharer/sharer.php?u={YOUR_WEBSITE_LINK}'"></i>
     </span>
 </div>
 
